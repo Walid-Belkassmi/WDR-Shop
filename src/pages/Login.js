@@ -1,9 +1,45 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Button from '../components/Button'
 import Input from '../components/Input'
+import { gql, useMutation } from '@apollo/client'
 
 const Login = () => {
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+
+  const handleChangeEmail = (e) => {
+    setEmail(e.target.value)
+  }
+  const handleChangePassword = (e) => {
+    setPassword(e.target.value)
+  }
+
+  const LOGIN_USER = gql`
+    mutation customerAccessTokenCreate {
+      customerAccessTokenCreate(
+        input: { email: "${email}", password: "${password}" }
+      ) {
+        customerAccessToken {
+          accessToken
+        }
+        customerUserErrors {
+          message
+        }
+      }
+    }
+  `
+
+  const [loginUser, { data, loading, error }] = useMutation(LOGIN_USER)
+
+  if (loading) return 'Submitting...'
+  if (error) return `Submission error! ${error.message}`
+
+  const handleClickLogin = async () => {
+    await loginUser()
+    console.log(data)
+  }
+
   return (
     <div className="container mx-auto">
       <div className="flex justify-center px-6 my-12">
@@ -18,6 +54,8 @@ const Login = () => {
                 id={'email'}
                 type="email"
                 placeholder={'Email'}
+                value={email}
+                onChange={handleChangeEmail}
               />
               <Input
                 id={'password'}
@@ -25,6 +63,8 @@ const Login = () => {
                 placeholder={'Password'}
                 mb={'mb-4'}
                 label={'Password'}
+                value={password}
+                onChange={handleChangePassword}
               />
               <div className="mb-4">
                 <input
@@ -37,7 +77,7 @@ const Login = () => {
                 </label>
               </div>
               <div className="mb-6 text-center">
-                <Button label={'Login'} />
+                <Button label={'Login'} onClick={handleClickLogin} />
               </div>
               <hr className="mb-6 border-t" />
               <div className="text-center">
