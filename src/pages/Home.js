@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Home = () => {
   return (
@@ -20,18 +21,18 @@ const Home = () => {
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam
                 viverra euismod odio, gravida pellentesque urna varius vitae.
               </p>
-              <a
+              <Link
                 href="#"
                 className="bg-indigo-500 text-white py-4 px-12 rounded-full hover:bg-indigo-600"
               >
                 Demo
-              </a>
+              </Link>
             </div>
             <div className="w-1/2 pl-16">
               <img
                 src="https://source.unsplash.com/random?ux"
                 className="h-64 w-full object-cover rounded-xl"
-                alt="Layout Image"
+                alt="Layout img"
               />
             </div>
           </div>
