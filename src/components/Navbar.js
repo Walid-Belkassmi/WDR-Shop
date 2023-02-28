@@ -48,7 +48,7 @@ const Navbar = () => {
           </button>
         </div>
         <nav
-          className={`flex-col flex-grow pb-4 md:pb-0 ${
+          className={`flex flex-col flex-grow pb-4 md:pb-0 ${
             !burger && 'hidden'
           } md:flex md:justify-end md:flex-row`}
         >
