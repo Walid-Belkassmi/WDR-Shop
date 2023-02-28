@@ -11,6 +11,7 @@ const Input = ({
   ml,
   width,
   value,
+  onChange,
 }) => {
   return (
     <div className={`${mb} ${mr} ${ml} ${width} ${grow}`}>
@@ -26,6 +27,7 @@ const Input = ({
         type={type}
         placeholder={placeholder}
         value={value}
+        onChange={onChange}
       />
     </div>
   )
