@@ -1,8 +1,9 @@
-import { gql, useMutation } from '@apollo/client'
+import { useMutation } from '@apollo/client'
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import Button from '../components/Button'
 import Input from '../components/Input'
+import { REGISTER_USER } from '../graphql/Auth'
 
 const Signup = () => {
   const [firstName, setFirstName] = useState('hello')
@@ -10,6 +11,7 @@ const Signup = () => {
   const [email, setEmail] = useState('hello.bello@yopmail.com')
   const [password, setPassword] = useState('hello')
   const [passwordConfirm, setPasswordConfirm] = useState('hello')
+  const navigate = useNavigate()
 
   const handleChangeFirstName = (e) => {
     setFirstName(e.target.value)
@@ -26,23 +28,6 @@ const Signup = () => {
   const handleChangePasswordConfirm = (e) => {
     setPasswordConfirm(e.target.value)
   }
-
-  const REGISTER_USER = gql`
-    mutation customerCreate($input: CustomerCreateInput!) {
-      customerCreate(input: $input) {
-        customer {
-          firstName
-          lastName
-          email
-        }
-        customerUserErrors {
-          field
-          message
-          code
-        }
-      }
-    }
-  `
 
   const [registerUser, { data, loading, error, called }] =
     useMutation(REGISTER_USER)
@@ -65,6 +50,10 @@ const Signup = () => {
 
   if (called) {
     console.log(data)
+  }
+
+  if (data && data.customerCreate.customerUserErrors.length === 0) {
+    navigate('/')
   }
 
   return (
