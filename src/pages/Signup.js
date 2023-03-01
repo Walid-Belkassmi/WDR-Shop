@@ -1,9 +1,72 @@
-import React from 'react'
+import { gql, useMutation } from '@apollo/client'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Button from '../components/Button'
 import Input from '../components/Input'
 
 const Signup = () => {
+  const [firstName, setFirstName] = useState('hello')
+  const [lastName, setLastName] = useState('bello')
+  const [email, setEmail] = useState('hello.bello@yopmail.com')
+  const [password, setPassword] = useState('hello')
+  const [passwordConfirm, setPasswordConfirm] = useState('hello')
+
+  const handleChangeFirstName = (e) => {
+    setFirstName(e.target.value)
+  }
+  const handleChangeLastName = (e) => {
+    setLastName(e.target.value)
+  }
+  const handleChangeEmail = (e) => {
+    setEmail(e.target.value)
+  }
+  const handleChangePassword = (e) => {
+    setPassword(e.target.value)
+  }
+  const handleChangePasswordConfirm = (e) => {
+    setPasswordConfirm(e.target.value)
+  }
+
+  const REGISTER_USER = gql`
+    mutation customerCreate($input: CustomerCreateInput!) {
+      customerCreate(input: $input) {
+        customer {
+          firstName
+          lastName
+          email
+        }
+        customerUserErrors {
+          field
+          message
+          code
+        }
+      }
+    }
+  `
+
+  const [registerUser, { data, loading, error, called }] =
+    useMutation(REGISTER_USER)
+
+  if (loading) return 'Submitting...'
+  if (error) return `Submission error! ${error.message}`
+
+  const handleClickRegister = async () => {
+    await registerUser({
+      variables: {
+        input: {
+          firstName,
+          lastName,
+          email,
+          password,
+        },
+      },
+    })
+  }
+
+  if (called) {
+    console.log(data)
+  }
+
   return (
     <div className="container mx-auto">
       <div className="flex justify-center px-6 my-12">
@@ -22,6 +85,8 @@ const Signup = () => {
                   label={'First Name'}
                   mr={'md:mr-2'}
                   width="md:w-5/12"
+                  value={firstName}
+                  onChange={handleChangeFirstName}
                 />
                 <Input
                   id={'lastName'}
@@ -31,6 +96,8 @@ const Signup = () => {
                   label={'Last Name'}
                   ml={'md:ml-2'}
                   width="md:w-5/12"
+                  value={lastName}
+                  onChange={handleChangeLastName}
                 />
               </div>
               <Input
@@ -40,6 +107,8 @@ const Signup = () => {
                 grow="grow"
                 label={'Email'}
                 mb={'mb-4'}
+                value={email}
+                onChange={handleChangeEmail}
               />
               <div className="mb-4 md:flex ">
                 <Input
@@ -51,6 +120,8 @@ const Signup = () => {
                   label={'Password'}
                   mr={'md:mr-2'}
                   width="md:w-5/12"
+                  value={password}
+                  onChange={handleChangePassword}
                 />
                 <Input
                   id={'confirmPasssword'}
@@ -60,10 +131,16 @@ const Signup = () => {
                   label={'Confirm password'}
                   ml={'md:ml-2'}
                   width="md:w-5/12"
+                  value={passwordConfirm}
+                  onChange={handleChangePasswordConfirm}
                 />
               </div>
               <div className="mb-6 text-center">
-                <Button label={'Create account'} type="button" />
+                <Button
+                  label={'Create account'}
+                  type="button"
+                  onClick={handleClickRegister}
+                />
               </div>
               <hr className="mb-6 border-t" />
               <div className="text-center">

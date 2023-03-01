@@ -30,13 +30,16 @@ const Login = () => {
     }
   `
 
-  const [loginUser, { data, loading, error }] = useMutation(LOGIN_USER)
+  const [loginUser, { data, loading, error, called }] = useMutation(LOGIN_USER)
 
   if (loading) return 'Submitting...'
   if (error) return `Submission error! ${error.message}`
 
   const handleClickLogin = async () => {
     await loginUser()
+  }
+
+  if (called) {
     console.log(data)
   }
 
