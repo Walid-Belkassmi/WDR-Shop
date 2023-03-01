@@ -1,12 +1,16 @@
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import React, { useContext, useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 import Button from '../components/Button'
 import Input from '../components/Input'
-import { gql, useMutation } from '@apollo/client'
+import { useMutation } from '@apollo/client'
+import { UserContext } from '../context/User'
+import { LOGIN_USER } from '../graphql/Auth'
 
 const Login = () => {
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
+  const [email, setEmail] = useState('hello.bello@yopmail.com')
+  const [password, setPassword] = useState('hello')
+  const { token, setToken } = useContext(UserContext)
+  const navigate = useNavigate()
 
   const handleChangeEmail = (e) => {
     setEmail(e.target.value)
@@ -15,29 +19,28 @@ const Login = () => {
     setPassword(e.target.value)
   }
 
-  const LOGIN_USER = gql`
-    mutation customerAccessTokenCreate {
-      customerAccessTokenCreate(
-        input: { email: "${email}", password: "${password}" }
-      ) {
-        customerAccessToken {
-          accessToken
-        }
-        customerUserErrors {
-          message
-        }
-      }
-    }
-  `
-
-  const [loginUser, { data, loading, error }] = useMutation(LOGIN_USER)
+  const [loginUser, { data, loading, error, called }] = useMutation(LOGIN_USER)
 
   if (loading) return 'Submitting...'
   if (error) return `Submission error! ${error.message}`
 
   const handleClickLogin = async () => {
-    await loginUser()
-    console.log(data)
+    await loginUser({
+      variables: {
+        input: {
+          email,
+          password,
+        },
+      },
+    })
+  }
+
+  if (called && data) {
+    setToken(data.customerAccessTokenCreate.customerAccessToken.accessToken)
+  }
+
+  if (data && data.customerAccessTokenCreate.customerUserErrors.length === 0) {
+    navigate('/user')
   }
 
   return (
