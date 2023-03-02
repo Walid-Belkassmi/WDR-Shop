@@ -11,7 +11,7 @@ const Collections = () => {
     if (data) {
       setCollections(setCollections(data.collections.edges))
     }
-  }, [data])
+  }, [called])
 
   if (loading) return 'Submitting...'
   if (error) return `Submission error! ${error.message}`
