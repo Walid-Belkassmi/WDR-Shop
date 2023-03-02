@@ -5,6 +5,7 @@ import Forgotten from './pages/Forgotten'
 import Home from './pages/Home'
 import Login from './pages/Login'
 import Signup from './pages/Signup'
+import Product from './pages/Product'
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
         <Route path="/auth/signup" element={<Signup />} />
         <Route path="/auth/login" element={<Login />} />
         <Route path="/auth/forgotten" element={<Forgotten />} />
+        <Route path="/product" element={<Product />} />
       </Routes>
     </BrowserRouter>
   )
