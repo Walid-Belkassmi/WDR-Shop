@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import Button from '../components/Button'
 import Input from '../components/Input'
@@ -9,7 +9,7 @@ import { LOGIN_USER } from '../graphql/Auth'
 const Login = () => {
   const [email, setEmail] = useState('hello.bello@yopmail.com')
   const [password, setPassword] = useState('hello')
-  const { token, setToken } = useContext(UserContext)
+  const { token, setToken, user } = useContext(UserContext)
   const navigate = useNavigate()
 
   const handleChangeEmail = (e) => {
@@ -18,6 +18,12 @@ const Login = () => {
   const handleChangePassword = (e) => {
     setPassword(e.target.value)
   }
+
+  useEffect(() => {
+    if (user || token) {
+      navigate('/user')
+    }
+  }, [user, token])
 
   const [loginUser, { data, loading, error, called }] = useMutation(LOGIN_USER)
 
@@ -35,12 +41,19 @@ const Login = () => {
     })
   }
 
-  if (called && data) {
+  if (
+    called &&
+    data.customerAccessTokenCreate.customerUserErrors.length === 0
+  ) {
     setToken(data.customerAccessTokenCreate.customerAccessToken.accessToken)
   }
 
   if (data && data.customerAccessTokenCreate.customerUserErrors.length === 0) {
     navigate('/user')
+  }
+
+  if (loading) {
+    return <p>Loading...</p>
   }
 
   return (

@@ -12,11 +12,11 @@ import {
 import { setContext } from '@apollo/client/link/context'
 
 const httpLink = createHttpLink({
-  uri: 'https://wdr-konexioshop.myshopify.com/api/2023-01/graphql.json',
+  uri: 'https://a161eb-2.myshopify.com/api/2023-01/graphql.json',
 })
 
 const authLink = setContext((_, { headers }) => {
-  const token = '93110d0e9d5b34074b299fd867601196'
+  const token = '68488d3541a443c6882f3fa0fd3555ec'
   return {
     headers: {
       ...headers,
