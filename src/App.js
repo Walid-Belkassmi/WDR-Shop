@@ -7,6 +7,7 @@ import Home from './pages/Home'
 import Login from './pages/Login'
 import Profile from './pages/Profile'
 import Signup from './pages/Signup'
+import Product from './pages/Product'
 import Cart from './pages/Cart'
 
 const App = () => {
@@ -20,6 +21,7 @@ const App = () => {
           <Route path="/auth/signup" element={<Signup />} />
           <Route path="/auth/login" element={<Login />} />
           <Route path="/auth/forgotten" element={<Forgotten />} />
+          <Route path="/product" element={<Product />} />
           <Route path="/cart" element={<Cart />} />
         </Routes>
       </UserContextProvider>
