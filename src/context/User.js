@@ -25,6 +25,7 @@ const UserContextProvider = ({ children }) => {
 
   const logout = () => {
     localStorage.removeItem('token')
+    setToken(null)
     setUser(null)
   }
 

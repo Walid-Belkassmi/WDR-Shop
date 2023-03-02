@@ -5,23 +5,36 @@ import { UserContext } from '../context/User'
 import { GET_USER, GET_USER_ACTIVE } from '../graphql/Auth'
 
 const Profile = () => {
-  const { user, setUser, token } = useContext(UserContext)
+  const { user, setUser, token, logout } = useContext(UserContext)
   const navigate = useNavigate()
   const { loading, error, data, called } = useQuery(GET_USER_ACTIVE, {
     variables: { customerAccessToken: token },
   })
 
+  // useEffect(() => {
+  //   if (!loading && called) {
+  //     setUser(data.customer)
+  //   }
+  // }, [token])
+
+  // if (!loading && called) {
+  //   console.log(user)
+  // }
+
   useEffect(() => {
-    if (!loading && called) {
-      setUser(data.customer)
+    if (!token) {
+      navigate('/auth/login')
     }
   }, [token])
 
-  if (!loading && called) {
-    console.log(user)
-  }
-
-  return <div>Profile</div>
+  return (
+    <div>
+      Profile
+      <button className="border m-2 p-2 " onClick={logout}>
+        logout
+      </button>
+    </div>
+  )
 }
 
 export default Profile

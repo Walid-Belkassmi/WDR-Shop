@@ -19,6 +19,12 @@ const Login = () => {
     setPassword(e.target.value)
   }
 
+  useEffect(() => {
+    if (user || token) {
+      navigate('/user')
+    }
+  }, [user, token])
+
   const [loginUser, { data, loading, error, called }] = useMutation(LOGIN_USER)
 
   if (loading) return 'Submitting...'
