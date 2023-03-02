@@ -1,9 +1,16 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import Button from '../components/Button'
-import Input from '../components/Input'
 
-const Product = () => {
+const Product = ({
+  src1 = 'https://images.unsplash.com/photo-1515955656352-a1fa3ffcd111?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
+  src2 = 'https://images.unsplash.com/photo-1495557077419-2384a0150025?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1244&q=80',
+  title = 'Title',
+  currencySymbol = '€',
+  price = '89,99',
+  onClickAddtoCart,
+  onChangeItemCount,
+  description = 'Lorem ipsum, dolor sit, amet consectetur adipisicing elit. Vitae exercitationem porro saepe ea harum corrupti vero id laudantiumenim, libero blanditiis expedita cupiditate Link est.',
+}) => {
   return (
     <>
       <div className="py-6">
@@ -13,26 +20,28 @@ const Product = () => {
               <div>
                 <div className="h-64 md:h-80 rounded-lg bg-gray-100 mb-4">
                   <div className="h-64 md:h-80 rounded-lg bg-gray-100 mb-4 flex items-center justify-center">
-                    <span className="text-5xl">1</span>
+                    <img src={src1} />
                   </div>
 
                   <div className="h-64 md:h-80 rounded-lg bg-gray-100 mb-4 flex items-center justify-center">
-                    <span className="text-5xl">2</span>
+                    <img src={src2} />
                   </div>
                 </div>
               </div>
             </div>
             <div className="md:flex-1 px-4 mt-20 ml-4">
               <h2 className="mb-2 leading-tight tracking-tight font-bold text-gray-800 text-2xl md:text-3xl">
-                Lorem ipsum dolor, sit amet consectetur, adipisicing elit.
+                {title}
               </h2>
 
               <div className="flex items-center space-x-4 my-4">
                 <div>
                   <div className="rounded-lg bg-gray-100 flex py-2 px-3">
-                    <span className="text-indigo-400 mr-1 mt-1">€</span>
+                    <span className="text-indigo-400 mr-1 mt-1">
+                      {currencySymbol}
+                    </span>
                     <span className="font-bold text-indigo-600 text-3xl">
-                      89,99
+                      {price}
                     </span>
                   </div>
                 </div>
@@ -43,23 +52,22 @@ const Product = () => {
                 </div>
               </div>
 
-              <p className="text-gray-500">
-                Lorem ipsum, dolor sit, amet consectetur adipisicing elit. Vitae
-                exercitationem porro saepe ea harum corrupti vero id laudantium
-                enim, libero blanditiis expedita cupiditate Link est.
-              </p>
+              <p className="text-gray-500">{description}</p>
 
               <div className="flex py-4 space-x-4">
                 <div className="relative">
                   <div className="text-center left-0 pt-2 right-0 absolute block text-xs uppercase text-gray-400 tracking-wide font-semibold">
                     Qty
                   </div>
-                  <select className="cursor-pointer appearance-none rounded-xl border border-gray-200 pl-4 pr-8 h-14 flex items-end pb-1">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
+                  <select
+                    className="cursor-pointer appearance-none rounded-xl border border-gray-200 pl-4 pr-8 h-14 flex items-end pb-1"
+                    onChange={onChangeItemCount}
+                  >
+                    <option value={1}>1</option>
+                    <option value={2}>2</option>
+                    <option value={3}>3</option>
+                    <option value={4}>4</option>
+                    <option value={5}>5</option>
                   </select>
 
                   <svg
@@ -81,6 +89,7 @@ const Product = () => {
                 <button
                   type="button"
                   className="h-14 px-6 py-2 font-semibold rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white"
+                  onClick={onClickAddtoCart}
                 >
                   Ajouter au panier
                 </button>
