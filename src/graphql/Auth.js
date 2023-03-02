@@ -43,6 +43,20 @@ const GET_USER = gql`
   }
 `
 
+// addresses(first: 5) {
+//   edges {
+//     node {
+//       id
+//       address1
+//       address2
+//       city
+//       country
+//       zip
+//       phone
+//     }
+//   }
+// }
+
 const GET_USER_ACTIVE = gql`
   query getUser($customerAccessToken: String!) {
     customer(customerAccessToken: $customerAccessToken) {

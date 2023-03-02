@@ -1,10 +1,10 @@
 import { useMutation } from '@apollo/client'
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import Button from './Button'
 import Input from './Input'
 import { UserContext } from '../context/User'
-import { CREATE_USER_ADDRESS } from '../graphql/User'
+import { CREATE_ADDRESS } from '../graphql/User'
 
 const AddressForm = () => {
   const [addressLine1, setAddressLine1] = useState('Bd de versaille')
@@ -13,8 +13,15 @@ const AddressForm = () => {
   const [country, setCountry] = useState('France')
   const [postalCode, setPostalCode] = useState('75006')
   const [phone, setPhone] = useState('0808459274')
+  const [address, setAddress] = useState(null)
   const { user, token } = useContext(UserContext)
   const navigate = useNavigate()
+
+  useEffect(() => {
+    if (!token) {
+      navigate('/auth/login')
+    }
+  }, [token])
 
   const handleChangeAddressLine1 = (e) => {
     setAddressLine1(e.target.value)
@@ -36,7 +43,7 @@ const AddressForm = () => {
   }
 
   const [registerAddress, { data, loading, error, called }] =
-    useMutation(CREATE_USER_ADDRESS)
+    useMutation(CREATE_ADDRESS)
 
   if (loading) return 'Submitting...'
   if (error) return `Submission error! ${error.message}`
@@ -57,16 +64,13 @@ const AddressForm = () => {
     })
   }
 
-  if (called) {
-    console.log(data)
+  if (called && data.customerAddressCreate.customerUserErrors.length === 0) {
+    setAddress(data.customerAddressCreate.customerAddress)
   }
-  // if (called && data.customerCreate.customerUserErrors.length === 0) {
-  //   setUser(data.customerCreate.customer)
-  // }
 
-  // if (data && data.customerCreate.customerUserErrors.length === 0) {
-  //   navigate('/')
-  // }
+  if (called && data.customerAddressCreate.customerUserErrors.length > 0) {
+    return <p>{data.customerAddressCreate.customerUserErrors[0].message}</p>
+  }
 
   return (
     <div className="container mx-auto">
@@ -74,7 +78,7 @@ const AddressForm = () => {
         <div className="w-full xl:w-3/4 lg:w-11/12 flex">
           <div className="w-full h-auto bg-gray-400 hidden lg:block lg:w-5/12 bg-cover rounded-l-lg bg-[url('https://source.unsplash.com/Mv9hjnEUHR4/600x80')]"></div>
           <div className="w-full lg:w-7/12 bg-white p-5 rounded-lg lg:rounded-l-none">
-            <h3 className="pt-4 text-2xl text-center">Create an Account!</h3>
+            <h3 className="pt-4 text-2xl text-center">Create an Address</h3>
             <form className="px-8 pt-6 pb-8 mb-4 bg-white rounded">
               <div className="mb-4 md:flex ">
                 <Input
