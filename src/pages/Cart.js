@@ -1,8 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import Button from '../components/Button'
+import CartItem from '../components/CartItem'
 
-const Product = () => {
+const Cart = () => {
   return (
     // <div classNameName="container mx-auto">
     //   <div classNameName="flex justify-center px-6 my-12">
@@ -21,12 +22,23 @@ const Product = () => {
     //   }
     // </style>
 
-    // <body>
     <div className="h-screen bg-gray-100 pt-20">
       <h1 className="mb-10 text-center text-2xl font-bold">Cart Items</h1>
       <div className="mx-auto max-w-5xl justify-center px-6 md:flex md:space-x-6 xl:px-0">
         <div className="rounded-lg md:w-2/3">
-          <div className="justify-between mb-6 rounded-lg bg-white p-6 shadow-md sm:flex sm:justify-start">
+          <CartItem
+            id={''}
+            title={''}
+            size={''}
+            src={''}
+            // onClickSubstract={}
+            // onClickAdd={}
+            itemCount={''}
+            price={'12'}
+            currencyType={'€'}
+            // onClickRemoveItem={}
+          />
+          {/* <div className="justify-between mb-6 rounded-lg bg-white p-6 shadow-md sm:flex sm:justify-start">
             <img
               src="https://images.unsplash.com/photo-1515955656352-a1fa3ffcd111?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
               alt="product-img"
@@ -125,7 +137,7 @@ const Product = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
 
         {/* <!-- Sub total --> */}
@@ -153,8 +165,7 @@ const Product = () => {
         </div>
       </div>
     </div>
-    // </body>
   )
 }
 
-export default Product
+export default Cart
