@@ -1,8 +1,9 @@
 import { useMutation } from '@apollo/client'
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import Button from '../components/Button'
 import Input from '../components/Input'
+import { UserContext } from '../context/User'
 import { REGISTER_USER } from '../graphql/Auth'
 
 const Signup = () => {
@@ -11,6 +12,7 @@ const Signup = () => {
   const [email, setEmail] = useState('hello.bello@yopmail.com')
   const [password, setPassword] = useState('hello')
   const [passwordConfirm, setPasswordConfirm] = useState('hello')
+  const { setUser } = useContext(UserContext)
   const navigate = useNavigate()
 
   const handleChangeFirstName = (e) => {
@@ -48,8 +50,8 @@ const Signup = () => {
     })
   }
 
-  if (called) {
-    console.log(data)
+  if (called && data.customerCreate.customerUserErrors.length === 0) {
+    setUser(data.customerCreate.customer)
   }
 
   if (data && data.customerCreate.customerUserErrors.length === 0) {

@@ -2,7 +2,7 @@
 
 import { useQuery } from '@apollo/client'
 import { createContext, useEffect, useState } from 'react'
-import { GET_USER } from '../graphql/Auth'
+import { GET_USER, GET_USER_ACTIVE } from '../graphql/Auth'
 
 const UserContext = createContext({})
 
@@ -25,6 +25,7 @@ const UserContextProvider = ({ children }) => {
 
   const logout = () => {
     localStorage.removeItem('token')
+    setToken(null)
     setUser(null)
   }
 
