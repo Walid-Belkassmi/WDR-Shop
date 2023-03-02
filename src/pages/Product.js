@@ -60,50 +60,6 @@ const Cart = () => {
           </div>
 
           <div className="py-6">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="flex items-center space-x-2 text-gray-400 text-sm">
-                <Link href="#" className="hover:underline hover:text-gray-600">
-                  Home
-                </Link>
-                <span>
-                  <svg
-                    className="h-5 w-5 leading-none text-gray-300"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M9 5l7 7-7 7"
-                    />
-                  </svg>
-                </span>
-                <Link href="#" className="hover:underline hover:text-gray-600">
-                  Product
-                </Link>
-                <span>
-                  <svg
-                    className="h-5 w-5 leading-none text-gray-300"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M9 5l7 7-7 7"
-                    />
-                  </svg>
-                </span>
-                <span>?</span>
-              </div>
-            </div>
-
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-6">
               <div className="flex flex-col md:flex-row -mx-4">
                 <div className="md:flex-1 px-4">
