@@ -1,8 +1,8 @@
 import { useMutation } from '@apollo/client'
 import React, { useContext, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import Button from '../components/Button'
-import Input from '../components/Input'
+import Button from './Button'
+import Input from './Input'
 import { UserContext } from '../context/User'
 import { CREATE_USER_ADDRESS } from '../graphql/User'
 
