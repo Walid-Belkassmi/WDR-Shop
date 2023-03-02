@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom'
 
 const Home = () => {
   return (
-    <div className="h-screen bg-gray-50 flex items-center">
-      <section className="bg-cover bg-center py-32 w-full bg-[url('https://images.unsplash.com/photo-1602472097151-72eeec7a3185?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2071&q=80')]">
+    <div className=" bg-gray-50 flex items-center">
+      <section className="bg-cover bg-center py-40 w-full bg-[url('https://images.unsplash.com/photo-1602472097151-72eeec7a3185?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2071&q=80')]">
         <div className="container mx-auto text-left text-white">
           <div className="flex items-center">
             <div className="w-1/2">
