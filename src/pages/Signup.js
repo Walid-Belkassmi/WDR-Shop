@@ -52,7 +52,6 @@ const Signup = () => {
 
   if (called && data.customerCreate.customerUserErrors.length === 0) {
     setUser(data.customerCreate.customer)
-    console.log(data)
   }
 
   if (data && data.customerCreate.customerUserErrors.length === 0) {
