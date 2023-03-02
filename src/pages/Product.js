@@ -148,7 +148,7 @@ const Cart = () => {
                     </div>
                   </div>
                 </div>
-                <div className="md:flex-1 px-4">
+                <div className="md:flex-1 px-4 mt-20 ml-4">
                   <h2 className="mb-2 leading-tight tracking-tight font-bold text-gray-800 text-2xl md:text-3xl">
                     Lorem ipsum dolor, sit amet consectetur, adipisicing elit.
                   </h2>
