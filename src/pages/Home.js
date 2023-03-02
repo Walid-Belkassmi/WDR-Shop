@@ -36,116 +36,116 @@ const Home = () => {
         </section>
       </div>
 
-      <section class="bg-white py-12 text-gray-700 sm:py-16 lg:py-20">
-        <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
-          <div class="mx-auto max-w-md text-center">
-            <h2 class="mt-2 font-serif text-2xl font-bold sm:text-4xl">
+      <section className="bg-white py-12 text-gray-700 sm:py-16 lg:py-20">
+        <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-md text-center">
+            <h2 className="mt-2 font-serif text-2xl font-bold sm:text-4xl">
               Must Haves
             </h2>
-            <p class="mt-8 text-xl text-gray-700">
+            <p className="mt-8 text-xl text-gray-700">
               Some of our favourite picks this week.
             </p>
           </div>
 
-          <div class="mt-10 grid grid-cols-2 gap-6 lg:mt-16 lg:grid-cols-4 lg:gap-4">
-            <article class="relative">
-              <div class="aspect-square overflow-hidden">
+          <div className="mt-10 grid grid-cols-2 gap-6 lg:mt-16 lg:grid-cols-4 lg:gap-4">
+            <article className="relative">
+              <div className="aspect-square overflow-hidden">
                 <img
-                  class="group-hover:scale-125 h-full w-full object-cover transition-all duration-300"
+                  className="group-hover:scale-125 h-full w-full object-cover transition-all duration-300"
                   src="/images/b51KL2CYAFVT7VAPpnEMW.png"
                   alt=""
                 />
               </div>
-              <div class="mt-4 flex items-start justify-between">
-                <div class="">
-                  <h3 class="text-xs font-semibold sm:text-sm md:text-base">
-                    <Link href="#" title="" class="cursor-pointer">
+              <div className="mt-4 flex items-start justify-between">
+                <div className="">
+                  <h3 className="text-xs font-semibold sm:text-sm md:text-base">
+                    <Link href="#" title="" className="cursor-pointer">
                       ?????
-                      <span class="absolute" aria-hidden="true"></span>
+                      <span className="absolute" aria-hidden="true"></span>
                     </Link>
                   </h3>
                 </div>
 
-                <div class="text-right">
-                  <p class="text-xs font-normal sm:text-sm md:text-base">
+                <div className="text-right">
+                  <p className="text-xs font-normal sm:text-sm md:text-base">
                     $89.99
                   </p>
                 </div>
               </div>
             </article>
 
-            <article class="relative">
-              <div class="aspect-square overflow-hidden">
+            <article className="relative">
+              <div className="aspect-square overflow-hidden">
                 <img
-                  class="group-hover:scale-125 h-full w-full object-cover transition-all duration-300"
+                  className="group-hover:scale-125 h-full w-full object-cover transition-all duration-300"
                   src="/images/sUgmRNIkRW2SZCLKOOfX2.png"
                   alt=""
                 />
               </div>
-              <div class="mt-4 flex items-start justify-between">
-                <div class="">
-                  <h3 class="text-xs font-semibold sm:text-sm md:text-base">
-                    <Link href="#" title="" class="cursor-pointer">
+              <div className="mt-4 flex items-start justify-between">
+                <div className="">
+                  <h3 className="text-xs font-semibold sm:text-sm md:text-base">
+                    <Link href="#" title="" className="cursor-pointer">
                       ?????
-                      <span class="absolute" aria-hidden="true"></span>
+                      <span className="absolute" aria-hidden="true"></span>
                     </Link>
                   </h3>
                 </div>
 
-                <div class="text-right">
-                  <p class="text-xs font-normal sm:text-sm md:text-base">
+                <div className="text-right">
+                  <p className="text-xs font-normal sm:text-sm md:text-base">
                     $89.99
                   </p>
                 </div>
               </div>
             </article>
 
-            <article class="relative">
-              <div class="aspect-square overflow-hidden">
+            <article className="relative">
+              <div className="aspect-square overflow-hidden">
                 <img
-                  class="group-hover:scale-125 h-full w-full object-cover transition-all duration-300"
+                  className="group-hover:scale-125 h-full w-full object-cover transition-all duration-300"
                   src="/images/J573dRVtghSynx5yCis80.png"
                   alt=""
                 />
               </div>
-              <div class="mt-4 flex items-start justify-between">
-                <div class="">
-                  <h3 class="text-xs font-semibold sm:text-sm md:text-base">
-                    <Link href="#" title="" class="cursor-pointer">
+              <div className="mt-4 flex items-start justify-between">
+                <div className="">
+                  <h3 className="text-xs font-semibold sm:text-sm md:text-base">
+                    <Link href="#" title="" className="cursor-pointer">
                       ?????
-                      <span class="absolute" aria-hidden="true"></span>
+                      <span className="absolute" aria-hidden="true"></span>
                     </Link>
                   </h3>
                 </div>
 
-                <div class="text-right">
-                  <p class="text-xs font-normal sm:text-sm md:text-base">
+                <div className="text-right">
+                  <p className="text-xs font-normal sm:text-sm md:text-base">
                     $89.99
                   </p>
                 </div>
               </div>
             </article>
 
-            <article class="relative">
-              <div class="aspect-square overflow-hidden">
+            <article className="relative">
+              <div className="aspect-square overflow-hidden">
                 <img
-                  class="group-hover:scale-125 h-full w-full object-cover transition-all duration-300"
+                  className="group-hover:scale-125 h-full w-full object-cover transition-all duration-300"
                   src="/images/oZ_djoBAmHk4vgKQh41YT.png"
                   alt=""
                 />
               </div>
-              <div class="mt-4 flex items-start justify-between">
-                <div class="">
-                  <h3 class="text-xs font-semibold sm:text-sm md:text-base">
-                    <Link href="#" title="" class="cursor-pointer">
+              <div className="mt-4 flex items-start justify-between">
+                <div className="">
+                  <h3 className="text-xs font-semibold sm:text-sm md:text-base">
+                    <Link href="#" title="" className="cursor-pointer">
                       ?????
-                      <span class="absolute" aria-hidden="true"></span>
+                      <span className="absolute" aria-hidden="true"></span>
                     </Link>
                   </h3>
                 </div>
 
-                <div class="text-right">
-                  <p class="text-xs font-normal sm:text-sm md:text-base">
+                <div className="text-right">
+                  <p className="text-xs font-normal sm:text-sm md:text-base">
                     $89.99
                   </p>
                 </div>
