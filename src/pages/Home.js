@@ -3,12 +3,6 @@ import { Link } from 'react-router-dom'
 
 const Home = () => {
   return (
-    // <div className="container mx-auto">
-    //   <div className="flex justify-center px-6 my-12">
-    //     <div className="w-full xl:w-3/4 lg:w-11/12 flex">Home</div>
-    //   </div>
-    // </div>
-
     <div className="h-screen bg-gray-50 flex items-center">
       <section className="bg-cover bg-center py-32 w-full bg-[url('https://images.unsplash.com/photo-1602472097151-72eeec7a3185?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2071&q=80')]">
         <div className="container mx-auto text-left text-white">
@@ -24,9 +18,9 @@ const Home = () => {
               </p>
               <Link
                 className="bg-indigo-500 text-white py-4 px-12 rounded-full hover:bg-indigo-600"
-                to={'/collections'}
+                to={'/collection'}
               >
-                Collections
+                Collection
               </Link>
             </div>
             <div className="w-1/2 pl-16">

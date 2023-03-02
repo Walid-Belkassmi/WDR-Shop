@@ -9,6 +9,7 @@ import Profile from './pages/Profile'
 import Signup from './pages/Signup'
 import Product from './pages/Product'
 import Cart from './pages/Cart'
+import Collection from './pages/Collection'
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
           <Route path="/auth/forgotten" element={<Forgotten />} />
           <Route path="/product" element={<Product />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/collection" element={<Collection />} />
         </Routes>
       </UserContextProvider>
     </BrowserRouter>
