@@ -1,6 +1,6 @@
 import { useQuery } from '@apollo/client'
 import React, { useContext, useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { UserContext } from '../context/User'
 import { GET_USER, GET_USER_ACTIVE } from '../graphql/Auth'
 
@@ -43,6 +43,7 @@ const Profile = () => {
           <div>
             <p>{user.email}</p>
           </div>
+          <Link to={'/user/address'}>Create Address</Link>
         </>
       )}
       <button className="border m-2 p-2 " onClick={logout}>

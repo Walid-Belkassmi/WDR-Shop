@@ -10,6 +10,7 @@ import Signup from './pages/Signup'
 import Product from './pages/Product'
 import Cart from './pages/Cart'
 import Collection from './pages/Collection'
+import CreateAddress from './pages/CreateAddress'
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/user" element={<Profile />} />
+          <Route path="/user/address" element={<CreateAddress />} />
           <Route path="/auth/signup" element={<Signup />} />
           <Route path="/auth/login" element={<Login />} />
           <Route path="/auth/forgotten" element={<Forgotten />} />
