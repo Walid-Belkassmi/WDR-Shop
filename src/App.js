@@ -27,7 +27,7 @@ const App = () => {
           <Route path="/product" element={<Product />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/collections" element={<Collections />} />
-          <Route path="/collections/:gid" element={<Collection />} />
+          <Route path="/collections/:title" element={<Collection />} />
           <Route path="/preCollection" element={<PreCollection />} />
         </Routes>
       </UserContextProvider>

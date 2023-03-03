@@ -5,9 +5,13 @@ const GET_COLLECTION = gql`
     collectionByHandle(handle: $handle) {
       title
       description
-      products(first: 250) {
+      image {
+        url
+      }
+      products(first: 100) {
         edges {
           node {
+            id
             title
             description
             variants(first: 10) {
