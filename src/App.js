@@ -7,7 +7,7 @@ import Home from './pages/Home'
 import Login from './pages/Login'
 import Profile from './pages/Profile'
 import Signup from './pages/Signup'
-import Product from './pages/Product'
+import Product from './components/ProductCard'
 import Cart from './pages/Cart'
 import Collection from './pages/Collection'
 
