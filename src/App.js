@@ -10,6 +10,8 @@ import Signup from './pages/Signup'
 import Product from './components/ProductCard'
 import Cart from './pages/Cart'
 import Collections from './pages/Collections'
+import PreCollection from './pages/PreCollection'
+import Collection from './pages/Collection'
 
 const App = () => {
   return (
@@ -25,6 +27,8 @@ const App = () => {
           <Route path="/product" element={<Product />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/collections" element={<Collections />} />
+          <Route path="/collections/:gid" element={<Collection />} />
+          <Route path="/preCollection" element={<PreCollection />} />
         </Routes>
       </UserContextProvider>
     </BrowserRouter>
