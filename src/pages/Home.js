@@ -22,7 +22,7 @@ const Home = () => {
                 </p>
                 <Link
                   className="bg-indigo-500 text-white py-4 px-12 rounded-full hover:bg-indigo-600"
-                  to={'/collection'}
+                  to={'/collections'}
                 >
                   Collection
                 </Link>
