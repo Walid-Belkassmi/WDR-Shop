@@ -3,6 +3,8 @@ import React, { useContext, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { UserContext } from '../context/User'
 import { GET_USER, GET_USER_ACTIVE } from '../graphql/Auth'
+import Container from '../components/Container'
+import Button from '../components/Button'
 
 const Profile = () => {
   const { user, setUser, token, logout } = useContext(UserContext)
@@ -30,25 +32,28 @@ const Profile = () => {
   console.log(user)
 
   return (
-    <div>
-      <p className="text-3xl">Profile</p>
-      {user && (
-        <>
-          <div>
-            <p>{user.firstName}</p>
+    <Container>
+      <div>
+        <p className="text-3xl font-semibold mb-5">Profile</p>
+        {user && (
+          <div className="flex-col font-semibold text-gray-600">
+            <div className="flex flex-col md:flex-row mb-2">
+              <p className="mr-3 text-gray-400 min-w-[100px]">First name</p>
+              <p className="capitalize">{user.firstName}</p>
+            </div>
+            <div className="flex flex-col md:flex-row mb-2">
+              <p className="mr-3 text-gray-400 min-w-[100px]">Last name</p>
+              <p className="capitalize">{user.lastName}</p>
+            </div>
+            <div className="flex flex-col md:flex-row mb-2">
+              <p className="mr-3 text-gray-400 min-w-[100px]">Email</p>
+              <p>{user.email}</p>
+            </div>
           </div>
-          <div>
-            <p>{user.lastName}</p>
-          </div>
-          <div>
-            <p>{user.email}</p>
-          </div>
-        </>
-      )}
-      <button className="border m-2 p-2 " onClick={logout}>
-        logout
-      </button>
-    </div>
+        )}
+        <Button label={'Logout'} onClick={logout} />
+      </div>
+    </Container>
   )
 }
 
