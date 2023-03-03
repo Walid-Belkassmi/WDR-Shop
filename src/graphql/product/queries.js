@@ -33,4 +33,12 @@ const GET_PRODUCT = gql`
     }
   }
 `
-export { GET_PRODUCT }
+
+const HOME_PRODUCTS = gql`
+  query {
+    products {
+      title
+    }
+  }
+`
+export { GET_PRODUCT, HOME_PRODUCTS }
