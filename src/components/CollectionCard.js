@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 const CollectionCard = ({ collection }) => {
   return (
-    <Link to={`/collections/${collection.id}`}>
+    <Link to={`/collections/${collection.title}`}>
       <div className="bg-gray-50 dark:bg-gray-800 p-8">
         <div className="">
           <h2 className="text-xl text-gray-600 dark:text-white">
