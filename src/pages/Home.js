@@ -1,5 +1,8 @@
-import React from 'react'
+import { useQuery } from '@apollo/client'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import HomePageProduct from '../components/HomePageProduct'
+import { HOME_PRODUCTS } from '../graphql/product/queries'
 
 const Home = () => {
   return (
@@ -48,109 +51,30 @@ const Home = () => {
           </div>
 
           <div className="mt-10 grid grid-cols-2 gap-6 lg:mt-16 lg:grid-cols-4 lg:gap-4">
-            <article className="relative">
-              <div className="aspect-square overflow-hidden">
-                <img
-                  className="group-hover:scale-125 h-full w-full object-cover transition-all duration-300"
-                  src="/images/b51KL2CYAFVT7VAPpnEMW.png"
-                  alt=""
-                />
-              </div>
-              <div className="mt-4 flex items-start justify-between">
-                <div className="">
-                  <h3 className="text-xs font-semibold sm:text-sm md:text-base">
-                    <Link href="#" title="" className="cursor-pointer">
-                      ?????
-                      <span className="absolute" aria-hidden="true"></span>
-                    </Link>
-                  </h3>
-                </div>
-
-                <div className="text-right">
-                  <p className="text-xs font-normal sm:text-sm md:text-base">
-                    $89.99
-                  </p>
-                </div>
-              </div>
-            </article>
-
-            <article className="relative">
-              <div className="aspect-square overflow-hidden">
-                <img
-                  className="group-hover:scale-125 h-full w-full object-cover transition-all duration-300"
-                  src="/images/sUgmRNIkRW2SZCLKOOfX2.png"
-                  alt=""
-                />
-              </div>
-              <div className="mt-4 flex items-start justify-between">
-                <div className="">
-                  <h3 className="text-xs font-semibold sm:text-sm md:text-base">
-                    <Link href="#" title="" className="cursor-pointer">
-                      ?????
-                      <span className="absolute" aria-hidden="true"></span>
-                    </Link>
-                  </h3>
-                </div>
-
-                <div className="text-right">
-                  <p className="text-xs font-normal sm:text-sm md:text-base">
-                    $89.99
-                  </p>
-                </div>
-              </div>
-            </article>
-
-            <article className="relative">
-              <div className="aspect-square overflow-hidden">
-                <img
-                  className="group-hover:scale-125 h-full w-full object-cover transition-all duration-300"
-                  src="/images/J573dRVtghSynx5yCis80.png"
-                  alt=""
-                />
-              </div>
-              <div className="mt-4 flex items-start justify-between">
-                <div className="">
-                  <h3 className="text-xs font-semibold sm:text-sm md:text-base">
-                    <Link href="#" title="" className="cursor-pointer">
-                      ?????
-                      <span className="absolute" aria-hidden="true"></span>
-                    </Link>
-                  </h3>
-                </div>
-
-                <div className="text-right">
-                  <p className="text-xs font-normal sm:text-sm md:text-base">
-                    $89.99
-                  </p>
-                </div>
-              </div>
-            </article>
-
-            <article className="relative">
-              <div className="aspect-square overflow-hidden">
-                <img
-                  className="group-hover:scale-125 h-full w-full object-cover transition-all duration-300"
-                  src="/images/oZ_djoBAmHk4vgKQh41YT.png"
-                  alt=""
-                />
-              </div>
-              <div className="mt-4 flex items-start justify-between">
-                <div className="">
-                  <h3 className="text-xs font-semibold sm:text-sm md:text-base">
-                    <Link href="#" title="" className="cursor-pointer">
-                      ?????
-                      <span className="absolute" aria-hidden="true"></span>
-                    </Link>
-                  </h3>
-                </div>
-
-                <div className="text-right">
-                  <p className="text-xs font-normal sm:text-sm md:text-base">
-                    $89.99
-                  </p>
-                </div>
-              </div>
-            </article>
+            <HomePageProduct
+              src={
+                'https://images.unsplash.com/photo-1512144253214-d94e86cd9189?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1631&q=80'
+              }
+              title={'NFL Jerseys'}
+            />
+            <HomePageProduct
+              src={
+                'https://images.unsplash.com/photo-1552066379-e7bfd22155c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8amVyc2V5fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=400&q=60'
+              }
+              title={'Brazil Jersey'}
+            />
+            <HomePageProduct
+              src={
+                'https://images.unsplash.com/photo-1577212017184-80cc0da11082?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80'
+              }
+              title={'Arsenal Jersey'}
+            />
+            <HomePageProduct
+              src={
+                'https://images.unsplash.com/photo-1533548893636-3eac05d3bde7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80'
+              }
+              title={'NFL Jersey'}
+            />
           </div>
         </div>
       </section>
