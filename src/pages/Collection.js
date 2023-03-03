@@ -13,7 +13,7 @@ const Collection = () => {
           <div className="bg-gray-50 dark:bg-gray-800 p-8">
             <div className="">
               <h2 className="text-xl text-gray-600 dark:text-white">
-                Lounge Chair
+                Football
               </h2>
               <p className="text-xl font-semibold text-gray-800 dark:text-white mt-2"></p>
             </div>
@@ -21,8 +21,8 @@ const Collection = () => {
               <Link to={''}>
                 <img
                   className=""
-                  src="https://i.ibb.co/8403ZFZ/pexels-hormel-2762247-removebg-preview-2-1.png"
-                  alt="A chair with designed back"
+                  src="https://images.unsplash.com/photo-1551854269-93c58e58b410?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
+                  alt="soccer jersey"
                   role="img"
                 />
               </Link>
@@ -31,7 +31,7 @@ const Collection = () => {
           <div className="bg-gray-50 dark:bg-gray-800 p-8">
             <div className="">
               <h2 className="text-xl text-gray-600 dark:text-white">
-                Lounge Chair
+                Basketball
               </h2>
               <p className="text-xl font-semibold text-gray-800 dark:text-white mt-2"></p>
             </div>
@@ -39,8 +39,8 @@ const Collection = () => {
               <Link to={''}>
                 <img
                   className=""
-                  src="https://i.ibb.co/WBdnRqb/eugene-chystiakov-3ne-Swyntb-Q8-unsplash-1-removebg-preview-2-1.png"
-                  alt="A chair with wooden legs"
+                  src="https://images.unsplash.com/photo-1530279281203-4c60af01ee58?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
+                  alt="basketball jersey"
                   role="img"
                 />
               </Link>
@@ -49,7 +49,7 @@ const Collection = () => {
           <div className="bg-gray-50 dark:bg-gray-800 p-8">
             <div className="">
               <h2 className="text-xl text-gray-600 dark:text-white">
-                Lounge Chair
+                Football Americain
               </h2>
               <p className="text-xl font-semibold text-gray-800 dark:text-white mt-2"></p>
             </div>
@@ -57,8 +57,8 @@ const Collection = () => {
               <Link to={''}>
                 <img
                   className=""
-                  src="https://i.ibb.co/R2fbCvj/kari-shea-It-Mgg-D0-Egu-Y-unsplash-removebg-preview-2-1.png"
-                  alt="A sofa chair with wooden legs"
+                  src="https://images.unsplash.com/photo-1568887628423-7c481b26dab8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1976&q=80"
+                  alt="American football jersey"
                   role="img"
                 />
               </Link>
@@ -70,15 +70,15 @@ const Collection = () => {
           <div className="bg-gray-50 dark:bg-gray-800 p-8">
             <div>
               <h2 className="text-xl leading-tight text-gray-600 dark:text-white">
-                Black Sofa
+                Musculation
               </h2>
               <p className="text-xl font-semibold text-gray-800 dark:text-white mt-2"></p>
             </div>
             <div className="flex justify-center items-center mt-28 md:mt-3">
               <Link to={''}>
                 <img
-                  src="https://i.ibb.co/CPdBFwZ/pexels-pixabay-276583-removebg-preview-1-1.png"
-                  alt="A large sectional sofa"
+                  src="https://images.unsplash.com/photo-1661439193765-392d81462003?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
+                  alt="gym"
                   role="img"
                 />
               </Link>
@@ -87,15 +87,15 @@ const Collection = () => {
           <div className="bg-gray-50 dark:bg-gray-800 p-8">
             <div>
               <h2 className="text-xl leading-tight text-gray-600 dark:text-white">
-                White Sofa
+                Golf
               </h2>
               <p className="text-xl font-semibold text-gray-800 dark:text-white mt-2"></p>
             </div>
             <div className="flex justify-center items-center mt-28 md:mt-1">
               <Link to={''}>
                 <img
-                  src="https://i.ibb.co/238nZzf/pexels-andrea-piacquadio-3757055-removebg-preview-1-1.png"
-                  alt="A beautiful two seater sofa"
+                  src="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
+                  alt="Golf"
                   role="img"
                 />
               </Link>
