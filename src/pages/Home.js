@@ -43,11 +43,9 @@ const Home = () => {
         <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-md text-center">
             <h2 className="mt-2 font-serif text-2xl font-bold sm:text-4xl">
-              Must Haves
+              Meilleures ventes
             </h2>
-            <p className="mt-8 text-xl text-gray-700">
-              Some of our favourite picks this week.
-            </p>
+            <p className="mt-8 text-xl text-gray-700">Nos favoris.</p>
           </div>
 
           <div className="mt-10 grid grid-cols-2 gap-6 lg:mt-16 lg:grid-cols-4 lg:gap-4">
