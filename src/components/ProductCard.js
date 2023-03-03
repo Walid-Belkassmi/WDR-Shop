@@ -2,8 +2,8 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const ProductCard = ({
-  src1 = 'https://images.unsplash.com/photo-1515955656352-a1fa3ffcd111?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
-  src2 = 'https://images.unsplash.com/photo-1495557077419-2384a0150025?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1244&q=80',
+  src1 = 'https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/2655366c-e7b0-4d03-b2a1-6a8f618be6d2/maillot-de-football-dri-fit-paris-saint-germain-2022-23-stadium-domicile-pour-T2dRkh.png',
+  src2 = 'https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/bb8f2edb-6c92-4cd4-aee8-431658b00564/maillot-de-football-dri-fit-paris-saint-germain-2022-23-stadium-domicile-pour-T2dRkh.png',
   title = 'Title',
   currencySymbol = '€',
   price = '89,99',
@@ -14,7 +14,7 @@ const ProductCard = ({
   return (
     <>
       <div className="py-6">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-6">
+        <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 mt-6">
           <div className="flex flex-col md:flex-row -mx-4">
             <div className="md:flex-1 px-4">
               <div>
