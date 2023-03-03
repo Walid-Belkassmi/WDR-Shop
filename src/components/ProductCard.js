@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 const ProductCard = ({
   src1 = 'https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/2655366c-e7b0-4d03-b2a1-6a8f618be6d2/maillot-de-football-dri-fit-paris-saint-germain-2022-23-stadium-domicile-pour-T2dRkh.png',
   src2 = 'https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/bb8f2edb-6c92-4cd4-aee8-431658b00564/maillot-de-football-dri-fit-paris-saint-germain-2022-23-stadium-domicile-pour-T2dRkh.png',
-  title = 'Title',
+  title = 'Paris Saint-Germain 2022/23 Stadium Domicile',
   currencySymbol = '€',
   price = '89,99',
   onClickAddtoCart,
@@ -57,7 +57,7 @@ const ProductCard = ({
               <div className="flex py-4 space-x-4">
                 <div className="relative">
                   <div className="text-center left-0 pt-2 right-0 absolute block text-xs uppercase text-gray-400 tracking-wide font-semibold">
-                    Qty
+                    Qte
                   </div>
                   <select
                     className="cursor-pointer appearance-none rounded-xl border border-gray-200 pl-4 pr-8 h-14 flex items-end pb-1"
